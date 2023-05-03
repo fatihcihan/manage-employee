@@ -17,10 +17,6 @@ const EmployeeList = () => {
         handleClose();
     }, [employees])
 
-    useEffect(() => {
-        console.log("component rendered");
-    })
-
     const myRef = useRef(null);
     console.log(myRef.current);
 
@@ -52,7 +48,13 @@ const EmployeeList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <Employee employees={employees} />
+                    {
+                        employees.map((employee) => (
+                            <tr key={employee.id}>
+                                <Employee employee={employee} />
+                            </tr>
+                        ))
+                    }
                 </tbody>
             </table >
 
@@ -71,11 +73,6 @@ const EmployeeList = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
-
-            <input ref={myRef} type='text'>
-
-            </input>
-            <button onClick={onButtonClick}> Focus input</button>
 
         </>
     )
