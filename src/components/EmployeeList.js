@@ -18,7 +18,6 @@ const EmployeeList = () => {
     }, [employees])
 
     const myRef = useRef(null);
-    console.log(myRef.current);
 
     const onButtonClick = () => {
         console.log(myRef.current);
