@@ -32,7 +32,7 @@ const Pagination = ({ pages, setCurrentPage }) => {
                     })
                 }
                 <li className={`${currentButton === numOfPages.length ? 'page-item disabled' : 'page-item'}`}><a href="#!" className="page-link"
-                    onClick={() => setCurrentButton((prev) => prev === 1 ? numOfPages.length : prev + 1)}
+                    onClick={() => setCurrentButton((prev) => prev === numOfPages ? prev : prev + 1)}
                 >Next</a></li>
             </ul>
         </div >
