@@ -3,6 +3,7 @@ import Employee from './Employee';
 import { Button, Modal, Alert } from 'react-bootstrap';
 import { EmployeeContext } from '../contexts/EmployeeContext';
 import AddForm from './AddForm';
+import Pagination from './Pagination';
 
 const EmployeeList = () => {
 
@@ -67,6 +68,8 @@ const EmployeeList = () => {
                     }
                 </tbody>
             </table >
+            
+            <Pagination />
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header className='modal-header' closeButton>
