@@ -7,10 +7,12 @@ import Pagination from './Pagination';
 
 const EmployeeList = () => {
 
-    const { employees } = useContext(EmployeeContext);
+    const { sortedEmployees } = useContext(EmployeeContext);
 
     const [showAlert, setShowAlert] = useState(false);
     const [show, setShow] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [employeesPerPage] = useState(2);
 
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true);
@@ -29,7 +31,12 @@ const EmployeeList = () => {
         return () => {
             handleShowAlert();
         }
-    }, [employees])
+    }, [sortedEmployees])
+
+    const indexOfLastEmployee = currentPage * employeesPerPage;
+    const indexOfFirstEmployee = indexOfLastEmployee - employeesPerPage;
+    const currentEmployee = sortedEmployees.slice(indexOfFirstEmployee, indexOfLastEmployee);
+    const totalPagesNum = Math.ceil(sortedEmployees.length / employeesPerPage)
 
     return (
         <>
@@ -60,7 +67,7 @@ const EmployeeList = () => {
                 </thead>
                 <tbody>
                     {
-                        employees.sort((a, b) => (a.name < b.name ? -1 : 1)).map((employee) => (
+                        currentEmployee.map((employee) => (
                             <tr key={employee.id}>
                                 <Employee employee={employee} />
                             </tr>
@@ -68,8 +75,8 @@ const EmployeeList = () => {
                     }
                 </tbody>
             </table >
-            
-            <Pagination />
+
+            <Pagination pages={totalPagesNum} setCurrentPage={setCurrentPage} />
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header className='modal-header' closeButton>
