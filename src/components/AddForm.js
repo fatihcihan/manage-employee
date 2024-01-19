@@ -1,4 +1,4 @@
-import { Form } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 
 const AddForm = () => {
 
@@ -31,7 +31,9 @@ const AddForm = () => {
                     placeholder="Phone"
                 />
             </Form.Group>
-            <Button variant="success" type="submit">Add New Employee</Button>{' '}
+            <Button variant="success" type="submit">Add New Employee</Button>
         </Form>
     )
 }
+
+export default AddForm;
