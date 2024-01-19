@@ -6,7 +6,10 @@ import AddForm from './AddForm';
 
 const EmployeeList = () => {
     const { employees } = useContext(EmployeeContext);
-    const [show, setShow] = useState(true);
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => { setShow(false) }
+    const handleShow = () => { setShow(true) }
 
     return (
         <>
@@ -16,7 +19,7 @@ const EmployeeList = () => {
                         <h2>Manage <b>Employees</b></h2>
                     </div>
                     <div className="col-sm-6">
-                        <Button  className="btn btn-success text-white" data-toggle="modal"><i className="material-icons">&#xE147;</i> <span>Add New Employee3</span></Button>
+                        <Button onClick={handleShow} className="btn btn-success text-white" data-toggle="modal"><i className="material-icons">&#xE147;</i> <span>Add New Employee3</span></Button>
                     </div>
                 </div>
             </div>
@@ -34,8 +37,8 @@ const EmployeeList = () => {
                     <Employee employees={employees} />
                 </tbody>
             </table>
-            <Modal show={show}>
-                <Modal.Header>
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header className='modal-header' closeButton>
                     <Modal.Title>
                         Add Employee
                     </Modal.Title>
@@ -44,8 +47,8 @@ const EmployeeList = () => {
                     <AddForm />
                 </Modal.Body>
                 <Modal.Footer >
-                    <Button variant="secondary">
-                        Close Button
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close Modal
                     </Button>
                 </Modal.Footer>
             </Modal>
