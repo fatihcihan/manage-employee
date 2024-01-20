@@ -1,6 +1,10 @@
 import { Form, Button } from 'react-bootstrap';
+import { EmployeeContext } from '../contexts/EmployeeContext';
+import { useContext } from 'react';
 
 const AddForm = () => {
+
+    const { addEmployee } = useContext(EmployeeContext);
 
     return (
         <Form>
