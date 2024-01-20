@@ -38,7 +38,7 @@ const EmployeeList = () => {
                 </tbody>
             </table>
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header className='modal-header' closeButton>
+                <Modal.Header className='modal-header'>
                     <Modal.Title>
                         Add Employee
                     </Modal.Title>
