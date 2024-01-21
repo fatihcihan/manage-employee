@@ -11,8 +11,14 @@ const AddForm = () => {
     const [address, setAddress] = useState("");
     const [phone, setPhone] = useState("");
 
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        addEmployee(name, email, address, phone);
+    }
+
     return (
-        <Form>
+        <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3">
                 <Form.Control
                     type="text"
