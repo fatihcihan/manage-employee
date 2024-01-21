@@ -1,5 +1,4 @@
 const Employee = ({ employees }) => {
-    console.log(employees);
     return (
         <>
             {
