@@ -9,8 +9,8 @@ const Employee = ({ employees }) => {
                         <td>{employee.address}</td>
                         <td>{employee.phone}</td>
                         <td>
-                            <a href="#editEmployeeModal" className="edit" data-toggle="modal"><i className="material-icons" data-toggle="tooltip" title="" data-original-title="Edit"></i></a>
-                            <a href="#deleteEmployeeModal" className="delete" data-toggle="modal"><i className="material-icons" data-toggle="tooltip" title="" data-original-title="Delete"></i></a>
+                            <button className="btn text-warning btn-act" data-toggle="modal"><i className="material-icons" data-toggle="tooltip" title="" data-original-title="Edit"></i></button>
+                            <button className="btn text-danger btn-act" data-toggle="modal"><i className="material-icons" data-toggle="tooltip" title="" data-original-title="Delete"></i></button>
                         </td>
                     </tr>
                 ))
