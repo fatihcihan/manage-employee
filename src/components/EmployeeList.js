@@ -12,7 +12,14 @@ const EmployeeList = () => {
 
     const handleClose = () => { setShow(false) }
     const handleShow = () => { setShow(true) }
-    const handleShowAlert = () => { setShowAlert(true) }
+    // const handleShowAlert = () => { setShowAlert(true) }
+
+    const handleShowAlert = () => {
+        setShowAlert(true)
+        setTimeout(() => {
+            setShowAlert(false)
+        }, 2000);
+    };
 
     useEffect(() => {
         console.log("useEffect dep. array employees");
