@@ -34,7 +34,7 @@ const EmployeeList = () => {
                 </div>
             </div>
 
-            <Alert show={showAlert} variant="success" onClose={() => setShow(false)} dismissible>
+            <Alert show={showAlert} variant="success" onClose={() => setShowAlert(false)} dismissible>
                 Employee List successfully updated
             </Alert>
 
