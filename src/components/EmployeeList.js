@@ -15,11 +15,17 @@ const EmployeeList = () => {
     const handleShowAlert = () => { setShowAlert(true) }
 
     useEffect(() => {
+        console.log("useEffect dep. array employees");
         handleClose();
         return () => {
             handleShowAlert();
         }
     }, [employees])
+
+    useEffect(() => {
+        console.log("useEffect second");
+        setShowAlert(false);
+    }, []);
 
     return (
         <>
