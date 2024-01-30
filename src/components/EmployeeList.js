@@ -6,7 +6,7 @@ import AddForm from './AddForm';
 import Pagination from './Pagination'
 
 const EmployeeList = () => {
-    const { employees } = useContext(EmployeeContext);
+    const { sortedEmployees } = useContext(EmployeeContext);
 
     const [showAlert, setShowAlert] = useState(false);
     const [show, setShow] = useState(false);
@@ -30,12 +30,12 @@ const EmployeeList = () => {
         return () => {
             handleShowAlert();
         }
-    }, [employees])
+    }, [sortedEmployees])
 
     const indexOfLastEmployee = currentPage * employeesPerPage;
     const indexOfFirstEmployee = indexOfLastEmployee - employeesPerPage;
-    const currentEmployees = employees.slice(indexOfFirstEmployee, indexOfLastEmployee);
-    const totalPagesNum = Math.ceil(employees.length / employeesPerPage);
+    const currentEmployees = sortedEmployees.slice(indexOfFirstEmployee, indexOfLastEmployee);
+    const totalPagesNum = Math.ceil(sortedEmployees.length / employeesPerPage);
 
     useEffect(() => {
         console.log("useEffect second");
