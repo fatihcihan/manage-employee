@@ -10,6 +10,8 @@ const EmployeeList = () => {
 
     const [showAlert, setShowAlert] = useState(false);
     const [show, setShow] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [employeesPerPage, setEmployeesPerPage] = useState(2);
 
     const handleClose = () => { setShow(false) }
     const handleShow = () => { setShow(true) }
@@ -29,6 +31,11 @@ const EmployeeList = () => {
             handleShowAlert();
         }
     }, [employees])
+
+    const indexOfLastEmployee = currentPage * employeesPerPage;
+    const indexOfFirstEmployee = indexOfLastEmployee - employeesPerPage;
+    const currentEmployees = employees.slice(indexOfFirstEmployee, indexOfLastEmployee);
+    const totalPagesNum = Math.ceil(employees.length / employeesPerPage);
 
     useEffect(() => {
         console.log("useEffect second");
@@ -64,7 +71,7 @@ const EmployeeList = () => {
                 </thead>
                 <tbody>
                     {
-                        employees.sort((a, b) => (a.name < b.name ? -1 : 1)).map((employee) => (
+                        currentEmployees.sort((a, b) => (a.name < b.name ? -1 : 1)).map((employee) => (
                             <tr key={employee.id}>
                                 <Employee employee={employee} />
                             </tr>
@@ -73,7 +80,7 @@ const EmployeeList = () => {
                 </tbody>
             </table>
 
-            <Pagination />
+            <Pagination pages={totalPagesNum} setCurrentPage={setCurrentPage} />
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header className='modal-header'>
