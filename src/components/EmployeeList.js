@@ -11,11 +11,10 @@ const EmployeeList = () => {
     const [showAlert, setShowAlert] = useState(false);
     const [show, setShow] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [employeesPerPage, setEmployeesPerPage] = useState(2);
+    const [employeesPerPage] = useState(2);
 
     const handleClose = () => { setShow(false) }
     const handleShow = () => { setShow(true) }
-    // const handleShowAlert = () => { setShowAlert(true) }
 
     const handleShowAlert = () => {
         setShowAlert(true)
@@ -25,7 +24,6 @@ const EmployeeList = () => {
     };
 
     useEffect(() => {
-        console.log("useEffect dep. array employees");
         handleClose();
         return () => {
             handleShowAlert();
@@ -38,7 +36,6 @@ const EmployeeList = () => {
     const totalPagesNum = Math.ceil(sortedEmployees.length / employeesPerPage);
 
     useEffect(() => {
-        console.log("useEffect second");
         setShowAlert(false);
     }, []);
 

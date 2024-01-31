@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
 const Pagination = ({ pages, setCurrentPage, currentEmployees, sortedEmployees }) => {
-    // const pages = 5;
     const numOfPages = [];
 
     for (let i = 1; i <= pages; i++) {
@@ -39,12 +38,3 @@ const Pagination = ({ pages, setCurrentPage, currentEmployees, sortedEmployees }
 }
 
 export default Pagination;
-
-/*
-<li className="page-item"><a href="#" className="page-link">1</a></li>
-<li className="page-item"><a href="#" className="page-link">2</a></li>
-<li className="page-item active"><a href="#" className="page-link">3</a></li>
-<li className="page-item"><a href="#" className="page-link">4</a></li>
-<li className="page-item"><a href="#" className="page-link">5</a></li>
-<li className="page-item"><a href="#" className="page-link">Next</a></li> 
- */
