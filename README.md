@@ -50,3 +50,31 @@ Furthermore, localStorage is used to store the data in the browser. This ensures
 
 - **View the App:** After successfully launching the project, you can view the app by opening the following URL in your browser;  
  - **http://localhost:3000**
+
+ ## Demo
+
+### Employee List Preview
+![](https://imgur.com/Uo4c3Pj.png)
+
+![](https://imgur.com/OoOF4Gt.png)
+
+### Adding a New Employee
+![](https://imgur.com/ZB6bcNM.png)
+
+![](https://imgur.com/GNRk0Dt.png)
+
+![](https://imgur.com/Ywk0wr6.png)
+
+### Employee Update
+![](https://imgur.com/YsIbNRE.png)
+
+![](https://imgur.com/NrkhWwK.png)
+
+![](https://imgur.com/NiEZbg6.png)
+
+![](https://imgur.com/7HwO6hO.png)
+
+### Delete Employee
+![](https://imgur.com/1GObepE.png)
+
+![](https://imgur.com/nX8THPC.png)
