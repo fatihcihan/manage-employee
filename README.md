@@ -35,3 +35,18 @@ Furthermore, localStorage is used to store the data in the browser. This ensures
 
 - **contexts/EmployeeContext.js:** EmployeeContext is a React Context component used to manage employee data in this application. This component is built using the Context API and Reducer. EmployeeContext facilitates data sharing between components by enabling data flow at every level of the application.
 
+## Project Setup
+
+### To start using the app, follow these steps;
+
+-  **Clone the Project:** If you have Git installed, open your terminal and run the following command to clone the project;
+ -  `git clone https://github.com/fatihcihan/manage-employee.git`   
+
+ -  **Install Required Dependencies:** To install the required dependencies in the project, navigate to the root directory of the project in the terminal and run the following command;  
+ -  `npm install`
+
+ -  **Start the Project:** Run the following command in the terminal to start the project;
+ - `npm start`
+
+- **View the App:** After successfully launching the project, you can view the app by opening the following URL in your browser;  
+ - **http://localhost:3000**
